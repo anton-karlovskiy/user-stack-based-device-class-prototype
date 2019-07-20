@@ -1,7 +1,7 @@
 
 # Demo: UA-aware code-splitting with React
 
-A demo showing how to use UA-aware code-splitting with React. Utilities for UA parsing provided by [ua-parser-js](https://github.com/faisalman/ua-parser-js).
+A demo showing how to use UA-aware code-splitting with React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -9,8 +9,7 @@ Note: Device classification in this example is extremely basic. See [device-year
 
 ## Installation
 ```
-git clone https://github.com/GoogleChromeLabs/network-aware-components
-cd cra-ua-aware-code-splitting
+git clone https://github.com/anton-karlovskiy/alternative-to-device-year-class.git
 npm install
 npm start
 npm run build
