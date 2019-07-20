@@ -16,20 +16,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// ray test touch <
-// import axios from 'axios';
-// ray test touch >
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-// ray test touch <
-// axios.defaults.baseURL = 'https://browser.geekbench.com/android-benchmarks.json';
-// axios.defaults.headers.common['Content-Type'] = 'application/json';
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-// axios.defaults.mode = 'no-cors';
-// ray test touch >
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
