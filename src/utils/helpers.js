@@ -14,42 +14,28 @@
  * limitations under the License.
  */
 
-import UAParser from 'ua-parser-js';
+import axios from 'axios';
+
+import { CORS_ANYWHERE, ANDROID_BENCHMARKS_URL, IOS_BENCHMARKS_URL, MAC_BENCHMARKS_URL } from '../config';
 
 const getDeviceClass = () => {
-    // Detect device model from UA
-    const parser = new UAParser();
-    const uastring = navigator.userAgent;
-    
-    // ray test touch <
-    console.log('ray : uastring => ', uastring);
-    // ray test touch >
+  const uastring = navigator.userAgent;
+  
+  console.log('ray : uastring => ', uastring);
 
-    // ray test touch <
-    // TODO: no need to set it, perhaps it should be handled inside the mechanism
-    // parser.setUA(uastring);
-    // ray test touch >
+  axios.get(`${CORS_ANYWHERE}${ANDROID_BENCHMARKS_URL}`)
+    .then(response => {
+      console.log('ray : ***** response => ', response);
+    })
+    .catch(error => {
+      console.log('ray : ***** error => ', error);
+    });
+  // const iosBenchmarks = await axios.get(IOS_BENCHMARKS_URL);
+  // const macBenchmarks = await axios.get(MAC_BENCHMARKS_URL);
 
-    const device = parser.getDevice();
-    // ray test touch <
-    console.log('ray : device => ', device);
-    console.log('ray : parser.getResult => ', parser.getResult());
-    // ray test touch >
+  // console.log('ray : androidBenchmarks => ', androidBenchmarks);
 
-    const model = device.model;
-    console.log('[helpers] device model => ', model);
-
-    // Match against devices you consider low-end
-    const lowEnd = [
-        'Nexus 4',
-        'Nexus 5',
-        'Nexus 5X',
-        'Nexus 6',
-        'Redmi Note 6 Pro',
-        'ONE' // Alcatel 1X
-    ];
-    // Optional: map to device-year-class, Geekbench.
-    return lowEnd.indexOf(model) > 0 ? 'light' : 'heavy'
+  return 'heavy';
 };
 
 export { getDeviceClass };
