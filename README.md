@@ -14,3 +14,6 @@ npm install
 npm start
 npm run build
 ```
+## Glitch Source
+* [Link to Glitch App](https://anton-karlovskiy-alternative-to-device-year-class.glitch.me)
+* [Link to Project on Glitch](https://glitch.com/~anton-karlovskiy-alternative-to-device-year-class)
