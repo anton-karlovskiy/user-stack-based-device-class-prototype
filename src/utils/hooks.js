@@ -27,11 +27,11 @@ import {
 
 const unsupportMessage = 'The device is not detected.';
 
-const useDeviceClass = () => {
-  const [deviceParamSet, setDeviceParamSet] = useState(null);
+const useDeviceParams = () => {
+  const [deviceParams, setDeviceParams] = useState(null);
 
   useEffect(() => {
-    const getDeviceClass = async () => {
+    const getDevice = async () => {
       let matchedBenchmark;
       try {
         const uastring = navigator.userAgent;
@@ -48,20 +48,20 @@ const useDeviceClass = () => {
           matchedBenchmark = allBenchmarks.find(benchmark => benchmark.name === modelName);
         }
       } catch (error) {
-        console.log('[getDeviceClass] error => ', error);
+        console.log('[getDevice] error => ', error);
       }
   
       if (matchedBenchmark) {
-        setDeviceParamSet({...matchedBenchmark});
+        setDeviceParams({...matchedBenchmark});
       } else {
-        setDeviceParamSet({unsupportMessage});
+        setDeviceParams({unsupportMessage});
       }
     };
     
-    getDeviceClass();
+    getDevice();
   }, []);
 
-  return deviceParamSet;
+  return deviceParams;
 };
 
-export { useDeviceClass };
+export { useDeviceParams };
