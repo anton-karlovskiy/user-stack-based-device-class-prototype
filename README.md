@@ -1,15 +1,15 @@
 
-# Demo: UA-aware code-splitting with React
+# Demo: 
 
-A demo showing how to use UA-aware code-splitting with React.
+This is only working in local environment because trial userstack API(https://userstack.com) is running on http not https.
+Once you upgrade userstack API, you can get it up and running in production.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Note: Device classification in this example is extremely basic. See [device-year-class](https://github.com/facebook/device-year-class) or explore custom device -> CPU mapping using a data-source like Geekbench for a production solution.
 
 ## Installation
 ```
-git clone https://github.com/anton-karlovskiy/alternative-to-device-year-class.git
+git clone https://github.com/anton-karlovskiy/user-stack-based-device-class.git
 npm install
 npm start
 npm run build
